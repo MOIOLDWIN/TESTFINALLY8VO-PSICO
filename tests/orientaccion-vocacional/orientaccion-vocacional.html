@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Test de orientación vocacional</title>
+    <link rel="stylesheet" href="../../styles.css" />
+    <link rel="stylesheet" href="./orientaccion-vocacional.css" />
+  </head>
+  <body class="ov-page">
+    <header class="topbar">
+      <div class="container topbar__inner">
+        <a class="brand" href="../../index.html">
+          <span class="brand__logo" aria-hidden="true"></span>
+          <span>
+            <span class="brand__name">Centro de Evaluaciones</span><br />
+            <span class="brand__sub">Orientación vocacional</span>
+          </span>
+        </a>
+        <nav class="nav" aria-label="Navegación principal">
+          <a class="nav__link is-active" href="#">Test</a>
+          <a class="nav__link" href="../../index.html">Volver</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="page">
+      <section class="container">
+        <div class="test-layout">
+          <aside class="side-panel">
+            <span class="eyebrow">
+              <span class="eyebrow__dot"></span>
+              Exploración de intereses y aptitudes
+            </span>
+
+            <h1>Test de orientación vocacional</h1>
+            <p>
+                Este test permite identificar tus áreas de interés y habilidades
+                para orientar tu elección profesional. Analiza diferentes campos
+                vocacionales como ciencia, arte, comunicación, liderazgo,
+                tecnología y servicio social.
+            </p>
+
+            <div class="metric-card">
+              <div class="metric-card__row">
+                <span>Progreso</span>
+                  
+                  <strong id="progressText">0%</strong>
+               </div>
+           <div class="progress"><span id="progressBar" style="width:0%"></span></div>
+
+            <div class="info-list">
+              <div class="info-item">
+                <h3>Instrucciones</h3>
+
+                <p>
+                El test contiene preguntas relacionadas con
+                intereses vocacionales y habilidades personales.
+                Al finalizar obtendrás un perfil con tus
+                áreas vocacionales predominantes.
+                </p>
+              </div>
+              <div class="info-item">
+                <h3>Áreas evaluadas</h3>
+
+                <p>
+                Social, liderazgo, comunicación,
+                arte, música, administración,
+                ciencia, matemática,
+                tecnología y trabajo al aire libre.
+                </p>
+              </div>
+            </div>
+
+           
+          </aside>
+
+          <section class="main-panel" id="test">
+            <div class="block">
+              <h2>Instrucciones</h2>
+              <p class="sub">
+                Lee cada frase con calma. Primero valorarás tus
+                <strong>intereses</strong> y luego tus
+                <strong>aptitudes</strong> utilizando la escala de 1 a 5.
+              </p>
+              <div class="ov-scales">
+                <div class="ov-scale">
+                  <h3>Escala de intereses</h3>
+                  <ul>
+                    <li><strong>1</strong> · Me desagrada mucho o totalmente</li>
+                    <li><strong>2</strong> · Me desagrada algo o en parte</li>
+                    <li><strong>3</strong> · Me es indiferente</li>
+                    <li><strong>4</strong> · Me gusta algo o en parte</li>
+                    <li><strong>5</strong> · Me gusta mucho</li>
+                  </ul>
+                </div>
+                <div class="ov-scale">
+                  <h3>Escala de aptitudes</h3>
+                  <ul>
+                    <li><strong>1</strong> · Considero ser incompetente</li>
+                    <li><strong>2</strong> · Considero ser muy poco competente</li>
+                    <li><strong>3</strong> · Considero ser medianamente competente</li>
+                    <li><strong>4</strong> · Considero ser competente</li>
+                    <li><strong>5</strong> · Considero ser muy competente</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="notice">
+                El resultado es orientativo. Úsalo como punto de partida para conversar con un orientador vocacional o explorar carreras.
+              </div>
+            </div>
+
+            <div class="test-questions-section" id="questionsSection">
+            <div class="block">
+              <h2>Cuestionario</h2>
+              <p class="sub">
+                Responde todas las actividades del <strong>campo actual</strong>
+                y luego usa «Siguiente campo». No podrás avanzar si faltan
+                respuestas en ese campo.
+              </p>
+
+              <p
+                class="ov-counter"
+                id="ovFieldCounter"
+                aria-live="polite"
+              >
+                Campo 1 de 20 · Intereses
+              </p>
+
+              <div class="ov-field">
+                <div id="questions" class="ov-questions"></div>
+              </div>
+
+              <div class="ov-nav">
+                <button
+                  class="btn btn--soft ov-nav__btn ov-nav__btn--prev"
+                  id="prevFieldBtn"
+                  type="button"
+                >
+                  Anterior campo
+                </button>
+                <button
+                  class="btn btn--primary ov-nav__btn"
+                  id="nextFieldBtn"
+                  type="button"
+                >
+                  Siguiente campo
+                </button>
+              </div>
+            </div>
+
+            <section class="test-results-section is-hidden" id="resultadosSection" aria-hidden="true">
+              <h2 class="test-finished-header">Has finalizado el test</h2>
+              <div class="result-top1-card" id="resultTop1Card" style="display: none;"></div>
+              <div class="block" id="resultados">
+              <h2>Resultados</h2>
+              <p class="sub">
+                Al presionar <strong>Calcular resultados</strong> verás tus
+                intereses y aptitudes por campo vocacional, tu top 3 y un
+                resumen general.
+              </p>
+              <div class="ov-results-placeholder">
+                Completa el cuestionario y calcula para ver tu perfil.
+              </div>
+
+              <div class="result-grid" id="resultCards"></div>
+
+              <div class="block block--inner">
+                <h2 class="inner-title">Top 3 de campos</h2>
+                <div class="top3" id="top3Pills">
+                  <span class="pill">
+                    Completa el test para ver tus campos predominantes.
+                  </span>
+                </div>
+              </div>
+
+              <div class="table-wrap summary-wrap">
+                <table class="summary-table">
+                  <thead>
+                    <tr>
+                      <th>Campo</th>
+                      <th>Intereses</th>
+                      <th>Aptitudes</th>
+                      <th>Total</th>
+                    </tr>
+                  </thead>
+                  <tbody id="summaryBody"></tbody>
+                </table>
+              </div>
+
+              <div class="interp-grid interp-wrap" id="interpretations"></div>
+
+              <div class="actions-row">
+                <button
+                  class="btn btn--primary"
+                  type="button"
+                  onclick="calcular()"
+                >
+                  Calcular resultados
+                </button>
+                <button
+                  class="btn btn--soft"
+                  type="button"
+                  onclick="location.reload()"
+                >
+                  Limpiar respuestas
+                </button>
+                <button class="btn btn--soft" type="button" id="backToQuestionsBtn">Volver a preguntas</button>
+                <a class="btn btn--soft" href="../../index.html">Salir al inicio</a>
+              </div>
+            </div>
+            </section>
+            </section>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <script src="./orientaccion-vocacional.js"></script>
+  </body>
+</html>

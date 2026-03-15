@@ -1,0 +1,153 @@
+/* Estilos locales del test CHASIDE (archivo sigue en carpeta chadise). */
+
+.chaside-page .main-panel,
+.chaside-page .block,
+.chaside-page .table-wrap {
+  min-width: 0;
+}
+
+.chaside-page .chaside-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.chaside-page .chaside-tools {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.chaside-page .question-list {
+  display: grid;
+  gap: 12px;
+}
+
+.chaside-page .q-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  padding: 14px 16px;
+}
+
+.chaside-page .q-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 14px;
+  align-items: start;
+}
+
+.chaside-page .q-text {
+  color: #365071;
+  line-height: 1.55;
+}
+
+.chaside-page .q-text strong {
+  color: var(--text);
+}
+
+.chaside-page .q-actions {
+  display: inline-flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.chaside-page .q-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  background: #fcfdff;
+  cursor: pointer;
+  user-select: none;
+  min-height: 44px;
+}
+
+.chaside-page .q-toggle input {
+  width: 18px;
+  height: 18px;
+}
+
+.chaside-page .q-toggle.is-yes {
+  border-color: rgba(32, 165, 122, 0.35);
+}
+
+.chaside-page .q-toggle.is-no {
+  border-color: rgba(61, 111, 242, 0.25);
+}
+
+.chaside-page .q-toggle.is-selected {
+  box-shadow: 0 0 0 3px rgba(61, 111, 242, 0.1);
+  background: #fff;
+}
+
+.chaside-page .question-list--single {
+  min-height: 100px;
+}
+
+.chaside-page .test-counter {
+  margin: 0 0 12px;
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--muted);
+}
+
+.chaside-page .test-nav {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.chaside-page .test-nav .btn {
+  min-width: 140px;
+}
+
+.chaside-page .test-nav .btn.test-nav--hidden {
+  display: none;
+}
+
+.chaside-page .test-complete {
+  padding: 24px;
+  text-align: center;
+  color: var(--muted);
+  background: #f8fbff;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+}
+
+.chaside-page .block--inner {
+  padding: 18px;
+  margin-top: 18px;
+  box-shadow: none;
+}
+
+.chaside-page .inner-title {
+  font-size: 1.2rem;
+  margin: 0 0 12px;
+}
+
+.chaside-page .summary-wrap {
+  margin-top: 18px;
+}
+
+.chaside-page .interp-wrap {
+  margin-top: 18px;
+}
+
+@media (max-width: 760px) {
+  .chaside-page .q-row {
+    grid-template-columns: 1fr;
+  }
+  .chaside-page .q-actions {
+    justify-content: flex-start;
+  }
+  .chaside-page .q-toggle {
+    flex: 1 1 140px;
+  }
+}

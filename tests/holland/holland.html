@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Test de Holland</title>
+    <meta
+      name="description"
+      content="Test de intereses profesionales de Holland con cálculo, resumen e interpretación."
+    />
+    <link rel="stylesheet" href="../../styles.css" />
+    <link rel="stylesheet" href="./holland.css" />
+  </head>
+
+  <body class="holland-page">
+    <header class="topbar">
+      <div class="container topbar__inner">
+        <a class="brand" href="../../index.html">
+          <span class="brand__logo" aria-hidden="true"></span>
+          <span>
+            <span class="brand__name">Centro de Evaluaciones</span><br />
+            <span class="brand__sub">Test de Holland</span>
+          </span>
+        </a>
+
+        <nav class="nav" aria-label="Navegación principal">
+          <button
+            class="nav__toggle"
+            id="navToggle"
+            aria-expanded="false"
+            aria-controls="navMenu"
+          >
+            <span class="sr-only">Abrir menú</span>
+            <span class="hamburger"></span>
+          </button>
+          <div class="nav__menu" id="navMenu">
+            <a class="nav__link is-active" href="#test">Test</a>
+            <a class="nav__link" href="#resultados">Resultados</a>
+            <a class="nav__link" href="../../index.html">Volver</a>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main class="page">
+      <section class="container">
+        <div class="test-layout">
+          <aside class="side-panel">
+            <span class="eyebrow">
+              <span class="eyebrow__dot"></span>
+              Evaluación vocacional
+            </span>
+            <h1>Test de Holland</h1>
+            <p>
+              Completa el test en sus cuatro partes. Al final obtendrás un
+              resultado por dimensiones y una interpretación vocacional
+              orientativa con tus tres tipos más altos.
+            </p>
+
+            <div class="metric-card">
+              <div class="metric-card__row">
+                <span>Progreso</span>
+                <strong id="progressText">0%</strong>
+              </div>
+              <div class="progress">
+                <span id="progressBar" style="width: 0%"></span>
+              </div>
+            </div>
+
+            <div class="info-list">
+              <div class="info-item">
+                <h3>Indicaciones</h3>
+                <p>
+                  Responde de forma honesta según tu interés o proyección
+                  personal y profesional.
+                </p>
+              </div>
+              <div class="info-item">
+                <h3>Instrucciones</h3>
+                <p>
+                  Parte A: marca los adjetivos que te describen. Parte B y C:
+                  elige una opción por fila. Parte D: escoge una sola
+                  alternativa por pregunta.
+                </p>
+              </div>
+              <div class="info-item">
+                <h3>Dimensiones evaluadas</h3>
+                <p>
+                  Realista, Investigador, Social, Convencional, Emprendedor y
+                  Artístico.
+                </p>
+              </div>
+            </div>
+          </aside>
+
+          <section class="main-panel" id="test">
+            <div class="test-questions-section" id="questionsSection">
+            <div class="block">
+              <h2>Instrucciones generales</h2>
+              <p class="sub">
+                Lee cada apartado con calma y responde según tu interés real.
+                Después de completar el ejercicio, revisa el cuadro resumen y
+                tus resultados finales.
+              </p>
+              <div class="notice">
+                El resultado funciona como una guía de orientación vocacional.
+                No reemplaza una evaluación profesional completa.
+              </div>
+            </div>
+
+            <div class="block">
+              <h2>Parte A · Adjetivos</h2>
+              <p class="sub">
+                Marca con una X todos los adjetivos que describan tu
+                personalidad. Señala tantos como desees.
+              </p>
+              <div class="check-grid" id="partA"></div>
+            </div>
+
+            <div class="block">
+              <h2>Parte B · Autoconocimiento comparativo</h2>
+              <p class="sub">
+                Califícate en comparación con otras personas de tu edad. Elige
+                una sola respuesta por fila.
+              </p>
+
+              <div class="desktop-table">
+                <div class="table-wrap">
+                  <table class="test-table">
+                    <thead>
+                      <tr>
+                        <th>#</th>
+                        <th>Característica</th>
+                        <th>A</th>
+                        <th>B</th>
+                        <th>C</th>
+                      </tr>
+                    </thead>
+                    <tbody id="partB"></tbody>
+                  </table>
+                </div>
+              </div>
+
+              <div class="mobile-stack" id="partBMobile"></div>
+            </div>
+
+            <div class="block">
+              <h2>Parte C · Logros, aspiraciones y metas</h2>
+              <p class="sub">
+                Indica qué importancia das a cada enunciado. Elige una sola
+                respuesta por fila.
+              </p>
+
+              <div class="desktop-table">
+                <div class="table-wrap">
+                  <table class="test-table">
+                    <thead>
+                      <tr>
+                        <th>#</th>
+                        <th>Meta / aspiración</th>
+                        <th>A</th>
+                        <th>B</th>
+                        <th>C</th>
+                      </tr>
+                    </thead>
+                    <tbody id="partC"></tbody>
+                  </table>
+                </div>
+              </div>
+
+              <div class="mobile-stack" id="partCMobile"></div>
+            </div>
+
+            <div class="block">
+              <h2>Parte D · Preferencias</h2>
+              <p class="sub">
+                Para cada pregunta, escoge una sola alternativa según lo que
+                más se ajuste a ti.
+              </p>
+              <div id="partD"></div>
+            </div>
+            </div>
+
+            <section class="test-results-section is-hidden" id="resultadosSection" aria-hidden="true">
+            <div class="block" id="resultados">
+              <h2 class="test-finished-header">Has finalizado el test</h2>
+              <p class="sub" style="text-align:center;margin-bottom:24px">
+                Revisa tu resultado principal y el detalle por dimensiones.
+              </p>
+              <div id="resultTop1Card" class="result-top1-card" style="display:none"></div>
+              <h2 style="margin-top:24px">Resultados por dimensión</h2>
+              <p class="sub">
+                Cuadro resumen, top 3 e interpretación de cada dimensión.
+              </p>
+
+              <div class="result-grid" id="resultCards"></div>
+
+              <div class="block block--inner">
+                <h2 class="inner-title">Top 3 del perfil</h2>
+                <div class="top3" id="top3Pills">
+                  <span class="pill">Completa el test para ver tu perfil.</span>
+                </div>
+              </div>
+
+              <div class="table-wrap summary-wrap">
+                <table class="summary-table">
+                  <thead>
+                    <tr>
+                      <th>Dimensión</th>
+                      <th>Parte A</th>
+                      <th>Parte B</th>
+                      <th>Parte C</th>
+                      <th>Parte D</th>
+                      <th>Total</th>
+                    </tr>
+                  </thead>
+                  <tbody id="summaryBody"></tbody>
+                </table>
+              </div>
+
+              <div class="interp-grid interp-wrap" id="interpretations"></div>
+
+              <div class="actions-row">
+                <button class="btn btn--primary" id="calculateBtn" type="button">
+                  Calcular resultados
+                </button>
+                <button class="btn btn--soft" id="resetBtn" type="button">
+                  Limpiar
+                </button>
+                
+                <button class="btn btn--soft" type="button" id="backToQuestionsBtn">Volver a preguntas</button>
+                <a class="btn btn--soft" href="../../index.html">Salir al inicio</a>
+              </div>
+            </div>
+            </section>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <script src="./holland.js"></script>
+  </body>
+</html>

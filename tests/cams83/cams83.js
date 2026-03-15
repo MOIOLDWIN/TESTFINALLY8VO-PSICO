@@ -1,0 +1,1 @@
+document.getElementById('demoBtn')?.addEventListener('click',()=>alert('Aquí construiremos el test completo en el siguiente paso.'));

@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Test de Kurder</title>
+  <meta name="description" content="Inventario de Intereses Vocacionales de G. F. Kuder con cálculo automático y resultados." />
+  <link rel="stylesheet" href="../../styles.css" />
+  <link rel="stylesheet" href="./kurder.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar__inner">
+      <a class="brand" href="../../index.html">
+        <span class="brand__logo" aria-hidden="true"></span>
+        <span>
+          <span class="brand__name">Centro de Evaluaciones</span><br>
+          <span class="brand__sub">Test de Kurder</span>
+        </span>
+      </a>
+      <nav class="nav" aria-label="Navegación principal">
+        <button class="nav__toggle" id="navToggle" aria-expanded="false" aria-controls="navMenu">
+          <span class="sr-only">Abrir menú</span>
+          <span class="hamburger"></span>
+        </button>
+        <div class="nav__menu" id="navMenu">
+          <a class="nav__link is-active" href="#test">Test</a>
+          <a class="nav__link" href="#resultados">Resultados</a>
+          <a class="nav__link" href="../../index.html">Volver</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page">
+    <section class="container">
+      <div class="test-layout">
+        <aside class="side-panel">
+          <span class="eyebrow"><span class="eyebrow__dot"></span> Inventario vocacional</span>
+          <h1>Test de Kurder</h1>
+          <p>
+            Este inventario presenta pares de actividades (díadas). En cada una debes elegir la que más te gusta,
+            aunque ambas te agraden o desagraden. Al final obtendrás tus áreas de interés predominantes.
+          </p>
+
+          <div class="metric-card">
+            <div class="metric-card__row">
+              <span>Progreso</span>
+              <strong id="progressText">0%</strong>
+            </div>
+            <div class="progress"><span id="progressBar" style="width:0%"></span></div>
+          </div>
+
+          <div class="info-list">
+            <div class="info-item">
+              <h3>Indicaciones</h3>
+              <p>Lee las dos actividades de cada grupo y marca solo una. No dejes ninguna díada sin responder.</p>
+            </div>
+            <div class="info-item">
+              <h3>Instrucciones</h3>
+              <p>Responde según tu preferencia espontánea. Supón que tienes la experiencia necesaria para realizar cualquier actividad propuesta.</p>
+            </div>
+            <div class="info-item">
+              <h3>Áreas evaluadas</h3>
+              <p>Exterior, Mecánica, Cálculo, Científica, Persuasiva, Artística, Literaria, Musical, Servicio Social y Oficina.</p>
+            </div>
+          </div>
+        </aside>
+
+          <section class="main-panel" id="test">
+            <div class="test-questions-section" id="questionsSection">
+            <div class="block">
+            <h2>Instrucciones generales</h2>
+            <p class="sub">
+              Este no es un examen y no existen respuestas correctas o incorrectas. El objetivo es ayudarte a descubrir
+              tus preferencias para la elección de una ocupación o carrera.
+            </p>
+            <div class="notice">
+              El resultado es una orientación vocacional. No decide tu futuro ni reemplaza una evaluación profesional completa.
+            </div>
+          </div>
+
+          <div class="block">
+            <h2>Díadas del cuestionario</h2>
+            <p class="sub">
+              En cada díada selecciona la actividad que prefieras. Responde la actual y presiona «Siguiente pregunta» para continuar.
+            </p>
+            <p class="test-counter" id="dyadCounter" aria-live="polite">Díada 1 de 45</p>
+            <div id="questionsContainer"></div>
+            <div class="test-nav">
+              <button class="btn btn--soft" id="prevDyadBtn" type="button">Anterior</button>
+              <button class="btn btn--primary" id="nextDyadBtn" type="button">Siguiente pregunta</button>
+            </div>
+          </div>
+          </div>
+
+          <section class="test-results-section is-hidden" id="resultadosSection" aria-hidden="true">
+          <div class="block" id="resultados">
+            <h2 class="test-finished-header">Has finalizado el test</h2>
+            <p class="sub" style="text-align:center;margin-bottom:24px">Revisa tu resultado principal y el detalle por áreas.</p>
+            <div id="resultTop1Card" class="result-top1-card" style="display:none"></div>
+            <h2 style="margin-top:24px">Resultados por área</h2>
+            <p class="sub">Puntaje por área, top 3, tabla e interpretación.</p>
+
+            <div class="result-grid" id="resultCards"></div>
+
+            <div class="block local-block">
+              <h2 class="mini-title">Top 3 de intereses</h2>
+              <div class="top3" id="top3Pills">
+                <span class="pill">Completa el test para ver tus áreas predominantes.</span>
+              </div>
+            </div>
+
+            <div class="table-wrap">
+              <table class="summary-table">
+                <thead>
+                  <tr>
+                    <th>Área</th>
+                    <th>Puntaje</th>
+                    <th>Lectura breve</th>
+                  </tr>
+                </thead>
+                <tbody id="summaryBody"></tbody>
+              </table>
+            </div>
+
+            <div class="block local-block">
+              <h2 class="mini-title">Respuestas elegidas</h2>
+              <p class="sub compact-sub">Se listan los 45 ítems que elegiste para facilitar la revisión y la tabulación.</p>
+              <div class="selected-grid" id="selectedGrid"></div>
+            </div>
+
+            <div class="interp-grid" id="interpretations"></div>
+
+            <div class="actions-row">
+              <button class="btn btn--primary" id="calculateBtn" type="button">Calcular resultados</button>
+              <button class="btn btn--soft" id="resetBtn" type="button">Limpiar</button>
+              <button class="btn btn--soft" type="button" id="backToQuestionsBtn">Volver a preguntas</button>
+              <a class="btn btn--soft" href="../../index.html">Salir al inicio</a>
+            </div>
+          </div>
+          </section>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <script src="./kurder.js"></script>
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Test IPP - Inventario de Intereses Profesionales</title>
+  <meta name="description" content="Inventario de Intereses y Preferencias Profesionales. Indica tus gustos y preferencias respecto a actividades y profesiones." />
+  <link rel="stylesheet" href="../../styles.css" />
+  <link rel="stylesheet" href="./ipp.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar__inner">
+      <a class="brand" href="../../index.html">
+        <span class="brand__logo" aria-hidden="true"></span>
+        <span>
+          <span class="brand__name">Centro de Evaluaciones</span><br>
+          <span class="brand__sub">Test IPP</span>
+        </span>
+      </a>
+      <nav class="nav" aria-label="Navegación principal">
+        <button class="nav__toggle" id="navToggle" aria-expanded="false" aria-controls="navMenu">
+          <span class="sr-only">Abrir menú</span>
+          <span class="hamburger"></span>
+        </button>
+        <div class="nav__menu" id="navMenu">
+          <a class="nav__link is-active" href="#test">Test</a>
+          <a class="nav__link" href="#resultados">Resultados</a>
+          <a class="nav__link" href="../../index.html">Volver</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page">
+    <section class="container">
+      <div class="test-layout">
+        <aside class="side-panel">
+          <span class="eyebrow"><span class="eyebrow__dot"></span> Intereses profesionales</span>
+          <h1>Test IPP</h1>
+          <p>
+            Inventario de Intereses y Preferencias Profesionales. Indica tus gustos y preferencias
+            respecto a diferentes actividades y profesiones. Lee cada frase y selecciona una opción.
+          </p>
+
+          <div class="metric-card">
+            <div class="metric-card__row">
+              <span>Progreso</span>
+              <strong id="progressText">0%</strong>
+            </div>
+            <div class="progress"><span id="progressBar" style="width:0%"></span></div>
+          </div>
+
+          <div class="info-list">
+            <div class="info-item">
+              <h3>Opciones de respuesta</h3>
+              <p><strong>A</strong> → Me gusta · <strong>B</strong> → Me es indiferente o tengo dudas · <strong>C</strong> → No me gusta · <strong>D</strong> → No conozco esa actividad.</p>
+            </div>
+            <div class="info-item">
+              <h3>Áreas evaluadas</h3>
+              <p>Científico experimental, Científico sanitario, Científico técnico, Teórico humanista, Literario y Docente.</p>
+            </div>
+          </div>
+        </aside>
+
+        <section class="main-panel" id="test">
+          <div class="test-questions-section" id="questionsSection">
+            <div class="block">
+              <h2>Instrucciones</h2>
+              <p class="sub">
+                Lee cada frase con calma y selecciona la opción que mejor refleje tu preferencia.
+                Responde todas las preguntas antes de calcular tus resultados.
+              </p>
+              <div class="notice">
+                El resultado es orientativo y te ayuda a explorar áreas profesionales afines a tus intereses.
+              </div>
+            </div>
+
+            <div class="block">
+              <h2>Cuestionario</h2>
+              <p class="sub">
+                Marca una opción por pregunta. Puedes revisar y cambiar respuestas antes de calcular.
+              </p>
+              <p class="test-counter" id="questionCounter" aria-live="polite">Pregunta 1 de 15</p>
+              <div id="preguntas" class="ipp-questions"></div>
+              <div class="test-nav">
+                <button class="btn btn--soft" id="prevQuestionBtn" type="button">Anterior</button>
+                <button class="btn btn--primary" id="nextQuestionBtn" type="button">Siguiente pregunta</button>
+              </div>
+            </div>
+          </div>
+
+          <section class="test-results-section is-hidden" id="resultadosSection" aria-hidden="true">
+            <div class="block" id="resultados">
+              <h2 class="test-finished-header">Has finalizado el test</h2>
+              <p class="sub" style="text-align:center;margin-bottom:24px">Revisa tu resultado principal y el detalle por áreas.</p>
+              <div id="resultTop1Card" class="result-top1-card" style="display:none"></div>
+              <h2 style="margin-top:24px">Resultados por área</h2>
+              <p class="sub">Puntaje obtenido en cada área de interés profesional.</p>
+
+              <div class="result-grid" id="resultCards"></div>
+
+              <div class="table-wrap">
+                <table class="summary-table">
+                  <thead>
+                    <tr>
+                      <th>Área</th>
+                      <th>Puntaje</th>
+                    </tr>
+                  </thead>
+                  <tbody id="summaryBody"></tbody>
+                </table>
+              </div>
+
+              <div class="actions-row">
+                <button class="btn btn--primary" id="calculateBtn" type="button">Calcular resultados</button>
+                <button class="btn btn--soft" id="resetBtn" type="button">Limpiar respuestas</button>
+                <button class="btn btn--soft" type="button" id="backToQuestionsBtn">Volver a preguntas</button>
+                <a class="btn btn--soft" href="../../index.html">Salir al inicio</a>
+              </div>
+            </div>
+          </section>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <script src="./ipp.js"></script>
+</body>
+</html>

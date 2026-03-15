@@ -1,0 +1,110 @@
+/* Test IPP: presentación mejorada de preguntas */
+
+#preguntas {
+  display: block;
+  margin-top: 16px;
+}
+
+.ipp-pregunta {
+  padding: 24px 22px;
+  border-radius: 22px;
+  background: #fff;
+  border: 1px solid var(--border);
+  box-shadow: 0 8px 24px rgba(26, 46, 34, 0.06);
+}
+
+.ipp-pregunta__num {
+  display: inline-block;
+  margin: 0 0 14px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--green-dark);
+  background: #e8f5e9;
+  border: 1px solid var(--border-soft);
+}
+
+.ipp-pregunta__texto {
+  margin: 0 0 22px;
+  font-size: 1.12rem;
+  line-height: 1.6;
+  color: var(--text);
+  font-weight: 500;
+}
+
+.ipp-opciones {
+  display: grid;
+  gap: 12px;
+}
+
+.ipp-opciones .option {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 18px;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  background: #fcfdff;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.ipp-opciones .option:hover {
+  background: #f1f8f4;
+  border-color: var(--border-soft);
+}
+
+.ipp-opciones .option input {
+  margin: 0;
+  width: 20px;
+  height: 20px;
+  accent-color: var(--green-light);
+}
+
+.ipp-opciones .option span {
+  color: var(--text);
+  line-height: 1.45;
+  font-size: 1rem;
+}
+
+.test-counter {
+  margin: 0 0 12px;
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--muted);
+}
+
+.test-nav {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.test-nav .btn {
+  min-width: 140px;
+}
+
+.test-nav .btn.test-nav--hidden {
+  display: none;
+}
+
+.test-complete {
+  padding: 28px 24px;
+  text-align: center;
+  color: var(--muted);
+  background: #f8faf9;
+  border-radius: 22px;
+  border: 1px solid var(--border);
+  font-size: 1.05rem;
+}
+
+@media (max-width: 760px) {
+  .ipp-pregunta {
+    padding: 18px 16px;
+  }
+  .ipp-opciones .option {
+    padding: 14px 16px;
+  }
+}

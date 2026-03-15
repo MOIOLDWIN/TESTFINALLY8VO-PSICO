@@ -1,0 +1,190 @@
+/* Estilos locales para el test de orientación vocacional */
+
+.ov-page .main-panel,
+.ov-page .block {
+  min-width: 0;
+}
+
+.ov-page .side-note {
+  margin-top: 16px;
+  padding: 12px 14px;
+  border-radius: 14px;
+  background: #f8fbff;
+  border: 1px solid var(--border);
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.ov-page .ov-scales {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin: 16px 0 8px;
+}
+
+.ov-page .ov-scale h3 {
+  font-size: 0.95rem;
+  margin-bottom: 6px;
+}
+
+.ov-page .ov-scale ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.ov-page .ov-scale li {
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin-bottom: 4px;
+}
+
+.ov-page .ov-questions {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.ov-page #questions h2 {
+  font-size: 1.15rem;
+  margin: 0 0 4px;
+}
+
+.ov-page #questions h3 {
+  font-size: 1rem;
+  margin: 12px 0 6px;
+  color: var(--muted-strong);
+}
+
+.ov-page #questions p {
+  margin: 10px 0 6px;
+  color: #2f435a;
+}
+
+.ov-page .ov-field {
+  border-radius: 22px;
+  border: 1px solid var(--border);
+  background: #fff;
+  padding: 18px 18px 12px;
+  box-shadow: 0 14px 30px rgba(15, 36, 84, 0.05);
+}
+
+.ov-page .ov-field-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.ov-page .ov-field-title {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.ov-page .ov-field-sub {
+  font-size: 0.86rem;
+  color: var(--muted);
+}
+
+.ov-page .ov-item {
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border-soft);
+}
+
+.ov-page .ov-item:last-child {
+  border-bottom: 0;
+}
+
+.ov-page .ov-item-text {
+  margin-bottom: 6px;
+}
+
+.ov-page .ov-scale-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.ov-page .ov-scale-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--border-soft);
+  background: #fff;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.ov-page .ov-scale-chip input[type="radio"] {
+  accent-color: var(--primary, #3d6ff2);
+}
+
+.ov-page .ov-scale-chip.is-selected {
+  border-color: rgba(61, 111, 242, 0.5);
+  background: #f0f4ff;
+  box-shadow: 0 0 0 1px rgba(61, 111, 242, 0.35);
+}
+
+.ov-page .ov-scale-chip small {
+  color: var(--muted);
+}
+
+.ov-page .ov-counter {
+  margin: 8px 0 10px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--muted-strong);
+}
+
+.ov-page .ov-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.ov-page .ov-nav__btn {
+  min-width: 150px;
+}
+
+.ov-page .ov-nav__btn--prev.ov-nav__btn--hidden {
+  display: none;
+}
+
+.ov-page .ov-results-placeholder {
+  padding: 16px 18px;
+  border-radius: 18px;
+  background: #f8fbff;
+  border: 1px dashed var(--border);
+  color: var(--muted);
+  font-size: 0.95rem;
+  margin-bottom: 18px;
+}
+
+.ov-page #resultados h2 {
+  margin-bottom: 4px;
+}
+
+.ov-page #resultados h3 {
+  margin-top: 16px;
+  margin-bottom: 6px;
+}
+
+.ov-page #resultados p {
+  margin: 4px 0;
+}
+
+@media (max-width: 900px) {
+  .ov-page .ov-scales {
+    grid-template-columns: 1fr;
+  }
+}
+
+.ov-page .ov-field {
+  padding: 16px 14px 10px;
+}

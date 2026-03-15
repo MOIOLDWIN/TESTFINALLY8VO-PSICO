@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+    <title>TESTS PSICOPEDAGOGIA</title>
+
+    <meta
+      name="description"
+      content="MENU DE TESTS PSICOPEDAGOGIA."
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+
+  <body>
+    <header class="topbar">
+      <div class="container topbar__inner">
+        <a class="brand" href="./index.html">
+          <span class="brand__logo" aria-hidden="true"></span>
+          <span>
+            <span class="brand__name">Centro de Evaluaciones</span><br />
+            <span class="brand__sub"> Principal de tests</span>
+          </span>
+        </a>
+
+        <nav class="nav" aria-label="Navegación principal">
+          <button
+            class="nav__toggle"
+            id="navToggle"
+            aria-expanded="false"
+            aria-controls="navMenu"
+          >
+            <span class="sr-only">Abrir menú</span>
+            <span class="hamburger"></span>
+          </button>
+
+          <div class="nav__menu" id="navMenu">
+            <a class="nav__link is-active" href="#evaluaciones">Inicio</a>
+            <a class="nav__link" href="#dashboard">Evaluaciones</a>
+            <a class="nav__link" href="#info">Información</a>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="hero" id="evaluaciones">
+        <div class="hero__card">
+          <span class="eyebrow">
+            <span class="eyebrow__dot"></span>
+            Presentación principal
+          </span>
+
+          <h1>Centro de tests vocacionales y académicos.</h1>
+
+          <p>
+            En este espacio podrás acceder a una serie de tests psicométricos y vocacionales diseñados para ayudarte a conocer mejor tus intereses, habilidades, personalidad y preferencias profesionales.
+          </p>
+
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="#dashboard">Ver evaluaciones</a>
+            <button class="btn btn--soft" id="shuffleBtn" type="button">
+              Ordenar tarjetas
+            </button>
+          </div>
+        </div>
+
+        <aside class="hero__stats">
+          <div class="statbox">
+            <div class="statbox__label">Total de evaluaciones</div>
+            <div class="statbox__value">6</div>
+            <div class="progress"><span></span></div>
+          </div>
+
+          <div class="statbox">
+            <div class="statbox__label">Áreas incluidas</div>
+            <div class="chips">
+              <span class="chip">Vocacional</span>
+              <span class="chip">Computación</span>
+              <span class="chip">Salud</span>
+              <span class="chip">Economía</span>
+              <span class="chip">Educación</span>
+              <span class="chip">Empresarial</span>
+              <span class="chip">Nivelación</span>
+            </div>
+          </div>
+        </aside>
+      </section>
+
+      <section class="section" id="dashboard">
+        <div class="section-head">
+          <div>
+            <h2>Evaluaciones disponibles</h2>
+            <p>Busca una prueba, revisa su objetivo y ábrela para responderla.</p>
+          </div>
+
+          <div class="tools tools--column">
+            <label class="searchbox">
+              <span class="sr-only">Buscar evaluación</span>
+              <input
+                type="search"
+                id="searchInput"
+                placeholder="Buscar evaluación"
+                autocomplete="off"
+              />
+            </label>
+            <div class="filter-rows">
+              <div class="segmented" role="tablist" aria-label="Categoría">
+                <button class="is-active" data-category="all" aria-selected="true">Todos</button>
+                <button data-category="Facultad" aria-selected="false">Facultad</button>
+                <button data-category="Carrera" aria-selected="false">Carrera</button>
+                <button data-category="Nivelación" aria-selected="false">Nivelación</button>
+                <button data-category="Vocacional" aria-selected="false">Vocacional</button>
+                <button data-category="Psicológico" aria-selected="false">Psicológico</button>
+              </div>
+              <div class="segmented" role="tablist" aria-label="Estado">
+                <button class="is-active" data-filter="all" aria-selected="true">Todos</button>
+                <button data-filter="available" aria-selected="false">Disponibles</button>
+                <button data-filter="soon" aria-selected="false">Próximamente</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="cards-wrap">
+          <div class="cards-grid" id="cardsGrid"></div>
+          <div class="empty-state" id="emptyState">
+            No se encontraron evaluaciones con ese criterio.
+          </div>
+        </div>
+      </section>
+
+      <section class="footer" id="info">
+        <div class="footer__card">
+          <p>
+            SITIO WEB- DE TESTS- 8VO SEMESTRE-PSICOPEDAGOGIA
+          </p>
+          <a class="btn btn--primary" href="#evaluaciones">Volver arriba</a>
+        </div>
+      </section>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+</html>

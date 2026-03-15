@@ -1,0 +1,152 @@
+.big5-page .main-panel,
+.big5-page .block,
+.big5-page .table-wrap {
+  min-width: 0;
+}
+
+.big5-page .big5-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.big5-page .big5-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 12px;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.big5-page .big5-legend span {
+  padding: 6px 10px;
+  border-radius: 14px;
+  background: #f8fbff;
+  border: 1px solid var(--border);
+}
+
+.big5-page .question-list {
+  display: grid;
+  gap: 10px;
+}
+
+.big5-page .question-list--single {
+  min-height: 120px;
+}
+
+.big5-page .big5-counter {
+  margin: 0 0 12px;
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--muted);
+}
+
+.big5-page .big5-nav {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.big5-page .big5-nav .btn {
+  min-width: 140px;
+}
+
+.big5-page .big5-nav .btn.big5-nav--hidden {
+  display: none;
+}
+
+.big5-page .big5-complete {
+  padding: 24px;
+  text-align: center;
+  color: var(--muted);
+  background: #f8fbff;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+}
+
+.big5-page .q-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 12px 14px;
+}
+
+.big5-page .q-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 12px;
+  align-items: center;
+}
+
+.big5-page .q-text {
+  color: #365071;
+  line-height: 1.55;
+}
+
+.big5-page .q-text strong {
+  color: var(--text);
+}
+
+.big5-page .q-scale {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.big5-page .q-scale label {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 4px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.big5-page .q-scale input[type="radio"] {
+  width: 18px;
+  height: 18px;
+}
+
+.big5-page .q-scale span {
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+
+.big5-page .q-scale label.is-selected {
+  background: #f3f6ff;
+}
+
+.big5-page .block--inner {
+  padding: 18px;
+  margin-top: 18px;
+  box-shadow: none;
+}
+
+.big5-page .inner-title {
+  font-size: 1.2rem;
+  margin: 0 0 12px;
+}
+
+.big5-page .summary-wrap {
+  margin-top: 18px;
+}
+
+.big5-page .interp-wrap {
+  margin-top: 18px;
+}
+
+@media (max-width: 760px) {
+  .big5-page .q-row {
+    grid-template-columns: 1fr;
+    align-items: flex-start;
+  }
+
+  .big5-page .q-scale {
+    justify-content: flex-start;
+  }
+}
+

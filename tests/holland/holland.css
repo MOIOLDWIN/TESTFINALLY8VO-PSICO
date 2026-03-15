@@ -1,0 +1,137 @@
+/* Estilos locales del test Holland.
+   Este archivo se enfoca en responsividad y legibilidad sin tocar el tema global. */
+
+.holland-page .main-panel,
+.holland-page .block,
+.holland-page .table-wrap {
+  min-width: 0;
+}
+
+/* En el CSS global, a <760px se oculta .desktop-table y se muestra .mobile-stack,
+   pero Holland no renderiza el stack móvil. Forzamos la tabla (y la hacemos apta móvil). */
+@media (max-width: 760px) {
+  .holland-page .desktop-table {
+    display: block !important;
+  }
+  .holland-page .mobile-stack {
+    display: none !important;
+  }
+}
+
+/* Parte A: grid más flexible en distintos anchos */
+.holland-page .check-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+@media (max-width: 1100px) {
+  .holland-page .check-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 760px) {
+  .holland-page .check-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Tablas B/C: mejor lectura en pantallas pequeñas (scroll horizontal suave) */
+.holland-page .table-wrap {
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+  touch-action: pan-y;
+}
+
+.holland-page .test-table,
+.holland-page .summary-table {
+  min-width: 760px;
+}
+
+@media (max-width: 760px) {
+  /* En móvil, evitamos scroll horizontal mostrando TODO en el ancho disponible. */
+  .holland-page .table-wrap {
+    overflow-x: visible;
+    overflow-y: visible;
+  }
+
+  .holland-page .test-table,
+  .holland-page .summary-table {
+    min-width: 0;
+    width: 100%;
+    table-layout: fixed;
+  }
+
+  .holland-page .test-table th,
+  .holland-page .test-table td,
+  .holland-page .summary-table th,
+  .holland-page .summary-table td {
+    padding: 10px 8px;
+    vertical-align: top;
+  }
+
+  /* Columna # */
+  .holland-page .test-table th:nth-child(1),
+  .holland-page .test-table td:nth-child(1),
+  .holland-page .summary-table th:nth-child(1),
+  .holland-page .summary-table td:nth-child(1) {
+    width: 42px;
+  }
+
+  /* Columnas A/B/C (más compactas, pero visibles sin scroll) */
+  .holland-page .test-table th:nth-child(3),
+  .holland-page .test-table td:nth-child(3),
+  .holland-page .test-table th:nth-child(4),
+  .holland-page .test-table td:nth-child(4),
+  .holland-page .test-table th:nth-child(5),
+  .holland-page .test-table td:nth-child(5) {
+    width: 52px;
+    text-align: center;
+  }
+
+  /* Texto de la característica/meta que salte de línea */
+  .holland-page .test-table td:nth-child(2) {
+    word-break: break-word;
+    overflow-wrap: anywhere;
+  }
+}
+
+/* Mejores targets táctiles para radios/checkbox */
+.holland-page input[type="radio"],
+.holland-page input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+}
+
+.holland-page .test-table td label {
+  min-height: 42px;
+  min-width: 42px;
+  align-items: center;
+}
+
+/* Resultados: 2 columnas en tablet para aprovechar espacio */
+@media (max-width: 1100px) {
+  .holland-page .result-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .holland-page .interp-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Ajustes del bloque interno de "Top 3" y márgenes en resultados */
+.holland-page .block--inner {
+  padding: 18px;
+  margin-top: 18px;
+  box-shadow: none;
+}
+
+.holland-page .inner-title {
+  font-size: 1.2rem;
+  margin: 0 0 12px;
+}
+
+.holland-page .summary-wrap {
+  margin-top: 18px;
+}
+
+.holland-page .interp-wrap {
+  margin-top: 18px;
+}

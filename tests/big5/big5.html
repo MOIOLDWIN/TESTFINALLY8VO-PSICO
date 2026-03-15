@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Evaluación de personalidad · Big Five</title>
+    <meta
+      name="description"
+      content="Evaluación de personalidad basada en los cinco grandes factores (Big Five): Apertura, Responsabilidad, Extraversión, Amabilidad y Neuroticismo."
+    />
+    <link rel="stylesheet" href="../../styles.css" />
+    <link rel="stylesheet" href="./big5.css" />
+  </head>
+
+  <body class="big5-page">
+    <header class="topbar">
+      <div class="container topbar__inner">
+        <a class="brand" href="../../index.html">
+          <span class="brand__logo" aria-hidden="true"></span>
+          <span>
+            <span class="brand__name">Centro de Evaluaciones</span><br />
+            <span class="brand__sub">Big Five · Personalidad</span>
+          </span>
+        </a>
+
+        <nav class="nav" aria-label="Navegación principal">
+          <button
+            class="nav__toggle"
+            id="navToggle"
+            aria-expanded="false"
+            aria-controls="navMenu"
+          >
+            <span class="sr-only">Abrir menú</span>
+            <span class="hamburger"></span>
+          </button>
+          <div class="nav__menu" id="navMenu">
+            <a class="nav__link is-active" href="#test">Test</a>
+            <a class="nav__link" href="#resultados">Resultados</a>
+            <a class="nav__link" href="../../index.html">Volver</a>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main class="page">
+      <section class="container">
+        <div class="test-layout">
+          <aside class="side-panel">
+            <span class="eyebrow">
+              <span class="eyebrow__dot"></span>
+              Evaluación de personalidad
+            </span>
+            <h1>Big Five · Cinco grandes factores</h1>
+            <p>
+              Indica qué tanto te identificas con cada afirmación. Al final
+              verás tus puntajes en Apertura, Responsabilidad, Extraversión,
+              Amabilidad y Neuroticismo.
+            </p>
+
+            <div class="metric-card">
+              <div class="metric-card__row">
+                <span>Progreso</span>
+                <strong id="progressText">0%</strong>
+              </div>
+              <div class="progress">
+                <span id="progressBar" style="width: 0%"></span>
+              </div>
+            </div>
+
+            <div class="info-list">
+              <div class="info-item">
+                <h3>Escala de respuesta</h3>
+                <p>
+                  1 = Muy en desacuerdo · 5 = Muy de acuerdo. No hay respuestas
+                  “correctas”.
+                </p>
+              </div>
+              <div class="info-item">
+                <h3>Factores</h3>
+                <p>
+                  Apertura (O), Responsabilidad (C), Extraversión (E),
+                  Amabilidad (A) y Neuroticismo (N).
+                </p>
+              </div>
+              <div class="info-item">
+                <h3>Uso</h3>
+                <p>
+                  Los resultados son orientativos para autoconocimiento y
+                  orientación, no un diagnóstico clínico.
+                </p>
+              </div>
+            </div>
+          </aside>
+
+          <section class="main-panel" id="test">
+            <div class="test-questions-section" id="questionsSection">
+            <div class="block">
+              <h2>Instrucciones generales</h2>
+              <p class="sub">
+                Lee cada frase y responde de acuerdo a qué tanto te describe en
+                general, no solo por tu estado de ánimo de hoy.
+              </p>
+              <div class="notice">
+                Responde con sinceridad. El objetivo es ayudarte a conocerte
+                mejor, no dar una “buena impresión”.
+              </div>
+            </div>
+
+            <div class="block block--questions">
+              <div class="big5-head">
+                <div>
+                  <h2>Preguntas</h2>
+                  <p class="sub">
+                    Usa la escala de 1 a 5. Responde la pregunta actual y presiona
+                    «Siguiente pregunta» para continuar.
+                  </p>
+                </div>
+                <div class="big5-legend">
+                  <span>1 Muy en desacuerdo</span>
+                  <span>3 Neutral</span>
+                  <span>5 Muy de acuerdo</span>
+                </div>
+              </div>
+
+              <p class="big5-counter" id="questionCounter" aria-live="polite">Pregunta 1 de 25</p>
+
+              <div class="question-list question-list--single">
+                <div id="questions"></div>
+              </div>
+
+              <div class="big5-nav">
+                <button class="btn btn--soft" id="prevBtn" type="button">Anterior</button>
+                <button class="btn btn--primary" id="nextBtn" type="button">Siguiente pregunta</button>
+              </div>
+            </div>
+            </div>
+
+            <section class="test-results-section is-hidden" id="resultadosSection" aria-hidden="true">
+            <div class="block" id="resultados">
+              <h2 class="test-finished-header">Has finalizado el test</h2>
+              <p class="sub" style="text-align:center;margin-bottom:24px">Revisa tu factor principal y el detalle completo.</p>
+              <div id="resultTop1Card" class="result-top1-card" style="display:none"></div>
+              <h2 style="margin-top:24px">Resultados por factor</h2>
+              <p class="sub">Puntajes por factor e interpretación (Bajo / Medio / Alto).</p>
+
+              <div class="result-grid" id="resultCards"></div>
+
+              <div class="block block--inner">
+                <h2 class="inner-title">Factores destacados</h2>
+                <div class="top3" id="top3Pills">
+                  <span class="pill">
+                    Completa el test para ver tus factores más altos.
+                  </span>
+                </div>
+              </div>
+
+              <div class="table-wrap summary-wrap">
+                <table class="summary-table">
+                  <thead>
+                    <tr>
+                      <th>Factor</th>
+                      <th>Puntaje</th>
+                      <th>Nivel</th>
+                      <th>Descripción</th>
+                    </tr>
+                  </thead>
+                  <tbody id="summaryBody"></tbody>
+                </table>
+              </div>
+
+              <div class="interp-grid interp-wrap" id="interpretations"></div>
+
+              <div class="actions-row">
+                <button class="btn btn--primary" id="calculateBtn" type="button">
+                  Calcular resultados
+                </button>
+                <button class="btn btn--soft" id="resetBtn" type="button">
+                  Limpiar
+                </button>
+                <button class="btn btn--soft" type="button" id="backToQuestionsBtn">Volver a preguntas</button>
+                <a class="btn btn--soft" href="../../index.html">Salir al inicio</a>
+              </div>
+            </div>
+            </section>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <script src="./big5.js"></script>
+  </body>
+</html>
